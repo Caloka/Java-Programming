@@ -14,7 +14,7 @@ public class Conta {
 		
 		if (value <= Saldo && value > 0) {
 		   Saldo -= value;
-		   System.out.println("Cliente: "+ Cliente +"| "+"Saque no valor de R$ " + value + " realizado com sucesso!\nAgora seu saldo é de R$ " + Saldo");
+		   System.out.println("Cliente: "+ Cliente +"| "+"Saque no valor de R$ " + value + " realizado com sucesso!\nAgora seu saldo é de R$ " + Saldo);
 		}
 		else {
 			System.out.println("Cliente: "+ Cliente +"| "+"O valor indicado não está disponível no seu saldo ou foi passado um valor incorreto.\nTente outro valor.");
