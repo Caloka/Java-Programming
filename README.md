@@ -13,11 +13,11 @@ public class Conta {
 	public void Sacar(double value) {
 		if (value < Saldo) {
 		   Saldo -= value;
-		   System.out.println("Saque realizado com sucesso!");
-		   System.out.println("Agora seu saque é de R$ " + Saldo);
+		   System.out.println("Cliente: "+ Cliente +"| "+"Saque realizado com sucesso!");
+		   System.out.println("Cliente: "+ Cliente +"| "+"Agora seu saque é de R$ " + Saldo);
 		}
 		else {
-			System.out.println("O valor não possui no seu Saldo no momento.\nTente outro valor.");
+			System.out.println("Cliente: "+ Cliente +"| "+"O valor não possui no seu Saldo no momento.\nTente outro valor.");
 		}
 	}
 	
@@ -28,11 +28,15 @@ public class Conta {
 	public void Tranferir(Conta destino,double value) {
 		 
 		if (value > Saldo) {
-			System.out.println("Você não possui saldo suficiente para tranferir.");
+			System.out.println("Cliente: "+ Cliente +"| "+"Você não possui saldo suficiente para tranferir.");
 		}
 		else {
-			Saldo -= value;
-			destino.Saldo += value;
+			
+			this.Sacar(value);
+			destino.Depositar(value);
+			System.out.println("Foram depositados R$ "+ value+ " para a conta do Cliente " + destino.Cliente);
+			/*Saldo -= value;
+			destino.Saldo += value;*/
 		}	
 	}
 	
