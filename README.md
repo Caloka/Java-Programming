@@ -11,24 +11,30 @@ public class Conta {
 	
 	
 	public void Sacar(double value) {
-		if (value < Saldo) {
+		
+		if (value <= Saldo && value > 0) {
 		   Saldo -= value;
 		   System.out.println("Cliente: "+ Cliente +"| "+"Saque no valor de R$ " + value + " realizado com sucesso!");
 		   System.out.println("Cliente: "+ Cliente +"| "+"Agora seu saldo é de R$ " + Saldo);
 		}
 		else {
-			System.out.println("Cliente: "+ Cliente +"| "+"O valor não possui no seu Saldo no momento.\nTente outro valor.");
+			System.out.println("Cliente: "+ Cliente +"| "+"O valor indicado não está disponível no seu saldo ou foi passado um valor incorreto.\nTente outro valor.");
 		}
 	}
 	
 	public void Depositar(double value) {
-		Saldo += value;
+		if (value > 0) {
+			Saldo += value;
+		}
+		else {
+			System.out.println("Insira um valor válido.");
+		}
 	}
 	
 	public void Tranferir(Conta destino,double value) {
 		 
-		if (value > Saldo) {
-			System.out.println("Cliente: "+ Cliente +"| "+"Você não possui saldo suficiente para tranferir.");
+		if (value > Saldo || value <= 0) {
+			System.out.println("Cliente: "+ Cliente +"| "+"Você não possui saldo suficiente para tranferir ou o número digitado está errado.");
 		}
 		else {
 			
