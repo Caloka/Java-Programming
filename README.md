@@ -13,8 +13,8 @@ public class Conta {
 	public void Sacar(double value) {
 		if (value < Saldo) {
 		   Saldo -= value;
-		   System.out.println("Cliente: "+ Cliente +"| "+"Saque realizado com sucesso!");
-		   System.out.println("Cliente: "+ Cliente +"| "+"Agora seu saque é de R$ " + Saldo);
+		   System.out.println("Cliente: "+ Cliente +"| "+"Saque no valor de R$ " + value + " realizado com sucesso!");
+		   System.out.println("Cliente: "+ Cliente +"| "+"Agora seu saldo é de R$ " + Saldo);
 		}
 		else {
 			System.out.println("Cliente: "+ Cliente +"| "+"O valor não possui no seu Saldo no momento.\nTente outro valor.");
@@ -32,7 +32,8 @@ public class Conta {
 		}
 		else {
 			
-			this.Sacar(value);
+			/*this.Sacar(value);*/
+			Saldo -= value;
 			destino.Depositar(value);
 			System.out.println("Foram depositados R$ "+ value+ " para a conta do Cliente " + destino.Cliente);
 			/*Saldo -= value;
