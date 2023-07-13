@@ -49,7 +49,7 @@ public class Conta {
 
 ~~~~
 
-Após isso, usamos um método main para criar os nossos ojetos e utilizar os métodos.
+Após isso, usamos um método main para criar os nossos objetos e utilizar os métodos.
 ~~~~java
 package javawork;
 
